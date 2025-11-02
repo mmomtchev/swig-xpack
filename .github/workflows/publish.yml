@@ -1,0 +1,94 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      build:
+        type: number
+        description: the build number to use
+
+jobs:
+  install_swig:
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - ubuntu-22.04
+          - ubuntu-22.04-arm
+          - macos-13
+          - macos-14
+          - windows-2022
+          - windows-11-arm
+
+    steps:
+      - uses: actions/setup-node@v6
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: runner.os == 'Windows'
+      - uses: actions/checkout@v5
+        with:
+          submodules: true
+      - name: Get Node.js arch name and xPack version
+        id: version
+        shell: bash
+        run: |
+          node -p "'swig_version=' + require('./package.json').xpack.properties.version" >> $GITHUB_OUTPUT
+          node -p "'arch=' + os.platform() + '-' + os.arch()" >> $GITHUB_OUTPUT
+      - run: npm install
+      - run: npx xpm install
+      - run: npx xpm run install
+      - name: Test
+        run: npx xpm run test
+      - name: Pack (Windows)
+        shell: bash
+        run: 7z a swig-xpack-${{ steps.version.outputs.swig_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.zip content
+        if: runner.os == 'Windows'
+      - name: Pack (POSIX)
+        shell: bash
+        run: tar -zcvf swig-xpack-${{ steps.version.outputs.swig_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.tar.gz content
+        if: runner.os != 'Windows'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: binary-${{ steps.version.outputs.arch }}
+          path: swig-xpack-*
+
+
+  create_release:
+    needs: install_swig
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true
+      - uses: actions/download-artifact@v6
+        with:
+          path: ${{ github.workspace }}
+          merge-multiple: true
+      - name: Get Node.js arch name and xPack version
+        id: version
+        shell: bash
+        run: |
+          node -p "'swig_version=' + require('./package.json').xpack.properties.version" >> $GITHUB_OUTPUT
+          node -p "'arch=' + os.platform() + '-' + os.arch()" >> $GITHUB_OUTPUT
+      - name: Update package.json
+        run: node update-package.mjs
+      - name: Resync package-lock.json
+        run: npm i
+      - uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: package.json package-lock.json
+          message: 'update package.json for ${{ steps.version.outputs.swig_version }}-${{ inputs.build }}'
+          push: true
+          tag: v${{ steps.version.outputs.swig_version }}-${{ inputs.build }}
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: swig-xpack-*
+          draft: true
+          tag: v${{ steps.version.outputs.swig_version }}-${{ inputs.build }}
+

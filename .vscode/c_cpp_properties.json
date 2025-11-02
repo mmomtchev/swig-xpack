@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}\\xpacks\\@mmomtchev\\python-xpack\\.content\\include"
+            ],
+            "defines": [
+                "PYTHON_PATH=\"xpacks\\\\@mmomtchev\\\\python-xpack\\\\.content\"",
+                "PYTHON_DLL=\"python312.dll\""
+            ],
+            "compilerPath": "cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

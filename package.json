@@ -1,0 +1,52 @@
+{
+  "name": "@mmomtchev/swig-xpack",
+  "version": "5.0.10-1",
+  "description": "SWIG JSE xPack",
+  "scripts": {
+    "postversion": "git push && git push --tags && node ./publish.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmomtchev/swig-xpack.git"
+  },
+  "keywords": [
+    "swig",
+    "swig-jse",
+    "wasm",
+    "node-api",
+    "xpack"
+  ],
+  "author": "Momtchil Momtchev <momtchil@momtchev.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmomtchev/swig-xpack/issues"
+  },
+  "homepage": "https://github.com/mmomtchev/swig-xpack#readme",
+  "xpack": {
+    "minimumXpmRequired": "0.19.1",
+    "binaries": {
+      "destination": "./.content",
+      "rootUrl": "https://github.com/mmomtchev/swig-xpack/releases/download",
+      "skip": 1,
+      "platforms": {},
+      "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-1"
+    },
+    "bin": {
+      "swig": "./.content/bin/swig-jse",
+      "swig-jse": "./.content/bin/swig-jse"
+    },
+    "properties": {
+      "version": "5.0.10"
+    },
+    "actions": {
+      "install": "conan install -of tmp --requires swig-jse/{{ properties.version }} --deployer-folder=content --deployer-package='*' --deployer=runtime_deploy",
+      "test": [
+        ".{{ path.sep }}content{{ path.sep }}swig-jse -version",
+        ".{{ path.sep }}content{{ path.sep }}swig-jse -swiglib"
+      ]
+    }
+  },
+  "dependencies": {
+    "xpm": "^0.19.2"
+  }
+}

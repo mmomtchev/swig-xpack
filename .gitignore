@@ -1,0 +1,8 @@
+/content
+/xpacks
+node_modules
+/tmp
+
+*.obj
+*.exe
+*.res
