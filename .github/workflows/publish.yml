@@ -48,7 +48,7 @@ jobs:
         shell: bash
         run: tar -zcvf swig-xpack-${{ steps.version.outputs.swig_version }}-${{ inputs.build }}-${{ steps.version.outputs.arch }}.tar.gz content
         if: runner.os != 'Windows'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: binary-${{ steps.version.outputs.arch }}
           path: swig-xpack-*
