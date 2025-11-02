@@ -24,6 +24,7 @@ jobs:
 
     steps:
       - uses: actions/setup-node@v6
+      - uses: conan-io/setup-conan@v1
       - uses: ilammy/msvc-dev-cmd@v1
         if: runner.os == 'Windows'
       - uses: actions/checkout@v5
