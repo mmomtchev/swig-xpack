@@ -26,8 +26,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
         if: runner.os == 'Windows'
       - uses: actions/checkout@v5
-        with:
-          submodules: true
+      - run: conan remote add swig-jse https://swig.momtchev.com/artifactory/api/conan/swig-jse
       - run: npm install
       - run: npx xpm install
       - run: npx xpm run install
