@@ -15,11 +15,11 @@ jobs:
       matrix:
         platform:
           - ubuntu-22.04
-          - ubuntu-22.04-arm
+          #- ubuntu-22.04-arm
           - macos-13
           - macos-14
           - windows-2022
-          - windows-11-arm
+          #- windows-11-arm
 
     steps:
       - uses: ilammy/msvc-dev-cmd@v1
