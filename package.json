@@ -32,8 +32,8 @@
       "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-1"
     },
     "bin": {
-      "swig": "./.content/bin/swig-jse",
-      "swig-jse": "./.content/bin/swig-jse"
+      "swig": "./.content/swig-jse",
+      "swig-jse": "./.content/swig-jse"
     },
     "properties": {
       "version": "5.0.10"
