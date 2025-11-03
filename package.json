@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/swig-xpack",
-  "version": "5.0.10-1",
+  "version": "5.0.10-2",
   "description": "SWIG JSE xPack",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -30,23 +30,23 @@
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "swig-xpack-5.0.10-1-darwin-arm64.tar.gz",
-          "sha256": "f737c07e9469db011045591eb387dd2ba051d2bffae29b3900b8ce1b6688bdee"
+          "fileName": "swig-xpack-5.0.10-2-darwin-arm64.tar.gz",
+          "sha256": "42efb548fdf594cc4945411f0a129ecc6011b994c5f3cc5b6fa34fb9859be62d"
         },
         "darwin-x64": {
-          "fileName": "swig-xpack-5.0.10-1-darwin-x64.tar.gz",
-          "sha256": "dfed06adef43598c95115f3e54395bce5579d76c0864e8e94bf3afa11fd7b153"
+          "fileName": "swig-xpack-5.0.10-2-darwin-x64.tar.gz",
+          "sha256": "3df63a01510a069a8a6701dd8190aebd44317467c97aae6e3297f87f04fea967"
         },
         "linux-x64": {
-          "fileName": "swig-xpack-5.0.10-1-linux-x64.tar.gz",
-          "sha256": "71f22efeb7b9259bfb49cdee56c6bc468ca567be059268f8800aba39c7e1ef1f"
+          "fileName": "swig-xpack-5.0.10-2-linux-x64.tar.gz",
+          "sha256": "b61ebe970c4103ac2889371c85d839ffc5b3c63fccf4cc20666b0f2840a797ba"
         },
         "win32-x64": {
-          "fileName": "swig-xpack-5.0.10-1-win32-x64.zip",
-          "sha256": "3665935f0ac46ee09e376bb55e8b16ed98672072f697ba4ca126b0d7e4b81235"
+          "fileName": "swig-xpack-5.0.10-2-win32-x64.zip",
+          "sha256": "2204f20f6d1cc9af7d205caa33faa9163f6feedf863755f4f92e8af112769478"
         }
       },
-      "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-1"
+      "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-2"
     },
     "bin": {
       "swig": "./.content/swig-jse",
