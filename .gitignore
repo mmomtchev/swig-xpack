@@ -2,6 +2,7 @@
 /xpacks
 node_modules
 /tmp
+/test/example_wrap.cxx
 
 *.obj
 *.exe
