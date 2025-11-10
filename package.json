@@ -59,7 +59,8 @@
       "install": "conan install -of tmp --requires swig-jse/{{ properties.version }} --deployer-folder=content --deployer-package='*' --deployer=runtime_deploy",
       "test": [
         ".{{ path.sep }}content{{ path.sep }}swig-jse -version",
-        ".{{ path.sep }}content{{ path.sep }}swig-jse -swiglib"
+        ".{{ path.sep }}content{{ path.sep }}swig-jse -swiglib",
+        ".{{ path.sep }}content{{ path.sep }}swig-jse -javascript -c++ -napi test/example.i"
       ]
     }
   },
