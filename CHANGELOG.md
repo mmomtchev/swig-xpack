@@ -1,3 +1,9 @@
+# 5.0.10-3 2025-11-10
+
+Fix using the Windows build without the `SWIG_LIB` environment variable
+
+[mmomtchev/swig#124](https://github.com/mmomtchev/swig/issues/124)
+
 # 5.0.10-2 2025-11-03
 
 Enable regex support
