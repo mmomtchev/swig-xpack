@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/swig-xpack",
-  "version": "5.0.10-2",
+  "version": "5.0.10-3",
   "description": "SWIG JSE xPack",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -30,23 +30,31 @@
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "swig-xpack-5.0.10-2-darwin-arm64.tar.gz",
-          "sha256": "42efb548fdf594cc4945411f0a129ecc6011b994c5f3cc5b6fa34fb9859be62d"
+          "fileName": "swig-xpack-5.0.10-3-darwin-arm64.tar.gz",
+          "sha256": "6212dc6bbb42372d6008fd735ce2e9172768b54e7d630ff6c0e3f11453a834f2"
         },
         "darwin-x64": {
-          "fileName": "swig-xpack-5.0.10-2-darwin-x64.tar.gz",
-          "sha256": "3df63a01510a069a8a6701dd8190aebd44317467c97aae6e3297f87f04fea967"
+          "fileName": "swig-xpack-5.0.10-3-darwin-x64.tar.gz",
+          "sha256": "e7f37c5047bbad3a4d24ed5063597a5ac1c3f7adbf32d732bb56f46d95c80149"
         },
         "linux-x64": {
-          "fileName": "swig-xpack-5.0.10-2-linux-x64.tar.gz",
-          "sha256": "b61ebe970c4103ac2889371c85d839ffc5b3c63fccf4cc20666b0f2840a797ba"
+          "fileName": "swig-xpack-5.0.10-3-linux-x64.tar.gz",
+          "sha256": "86ca906a8eb54fe2d89c9ca7e0302fb53af5b23506bbef20a9510c4d4b633257"
         },
         "win32-x64": {
-          "fileName": "swig-xpack-5.0.10-2-win32-x64.zip",
-          "sha256": "2204f20f6d1cc9af7d205caa33faa9163f6feedf863755f4f92e8af112769478"
+          "fileName": "swig-xpack-5.0.10-3-win32-x64.zip",
+          "sha256": "7f5fdb3239a09275dcbf6a0aa2d436c6e658dcfabf08f79c4ce13198e8e56e15"
+        },
+        "linux-arm64": {
+          "fileName": "swig-xpack-5.0.10-3-linux-arm64.tar.gz",
+          "sha256": "ef8f471b3d6c131740b2043b4491b23f96ee34a288130d7dc5377caede84feb7"
+        },
+        "win32-arm64": {
+          "fileName": "swig-xpack-5.0.10-3-win32-arm64.zip",
+          "sha256": "8aaa90f55e8ee90ac34b2f6c71ae40247838a194df11806d3e8c4e34dcdefcdb"
         }
       },
-      "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-2"
+      "baseUrl": "https://github.com/mmomtchev/swig-xpack/releases/download/v5.0.10-3"
     },
     "bin": {
       "swig": "./.content/swig-jse",
