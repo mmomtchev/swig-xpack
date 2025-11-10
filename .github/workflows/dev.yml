@@ -7,7 +7,7 @@ on:
     branches: main
 
 jobs:
-  install_meson:
+  install_swig:
     runs-on: ${{ matrix.platform }}
 
     strategy:
