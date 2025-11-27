@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: conan-io/setup-conan@v1
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: conan remote add swig-jse https://swig.momtchev.com/artifactory/api/conan/swig-jse
       - run: npm install
       - run: npx xpm install

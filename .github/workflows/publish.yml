@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v6
       - uses: conan-io/setup-conan@v1
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: conan remote add swig-jse https://swig.momtchev.com/artifactory/api/conan/swig-jse
       - name: Get Node.js arch name and xPack version
         id: version
@@ -59,7 +59,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - uses: actions/download-artifact@v6
