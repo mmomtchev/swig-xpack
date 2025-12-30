@@ -1,3 +1,7 @@
+# 5.0.12-1 2025-12-30
+
+Update SWIG JSE to 5.0.12
+
 # 5.0.11-1 2025-11-27
 
 Update SWIG JSE to 5.0.11
