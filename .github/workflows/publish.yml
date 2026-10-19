@@ -76,7 +76,7 @@ jobs:
         run: node update-package.mjs
       - name: Resync package-lock.json
         run: npm i
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v11
         with:
           default_author: github_actions
           add: package.json package-lock.json
