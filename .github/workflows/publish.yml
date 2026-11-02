@@ -23,7 +23,7 @@ jobs:
           - windows-11-arm
 
     steps:
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
       - uses: conan-io/setup-conan@v1
       - uses: actions/checkout@v6
       - run: conan remote add swig-jse https://swig.momtchev.com/artifactory/api/conan/swig-jse
